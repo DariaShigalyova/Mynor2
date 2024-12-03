@@ -204,8 +204,8 @@ input[type="Text"], input[type="Number"], input[type="Date"] {
 
 
 
-.anket {
-    margin-left: 330px;
+div.container {
+    margin-left: 15%;
 }
 
 input[type="Submit"], [type="Reset"] {
