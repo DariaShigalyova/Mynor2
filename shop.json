@@ -1,0 +1,65 @@
+[
+    {
+        "title": "Яркое чудо",
+        "price": 15550,
+        "description": "Букет из гортензий, пионов и асклепий",
+        "img": "1.jpg",
+        "vendor_code": "001"
+    },
+    {
+        "title": "Момент мечты",
+        "price": 6890,
+        "description": "Букет из роз",
+        "img": "2.jpg",
+        "vendor_code": "002"
+    },
+    {
+        "title": "Влюблённость",
+        "price": 3200,
+        "description": "Букет из альстромерий",
+        "img": "3.jpg",
+        "vendor_code": "003"
+    },
+    {
+        "title": "Нежное послание",
+        "price": 4200,
+        "description": "Букет из хризантем",
+        "img": "4.jpg",
+        "vendor_code": "004"
+    },
+    {
+        "title": "Маленькая радость",
+        "price": 3800,
+        "description": "Букет из пионов",
+        "img": "5.jpeg",
+        "vendor_code": "005"
+    },
+    {
+        "title": "Светлое вдохновение",
+        "price": 2300,
+        "description": "Букет из гипсофил",
+        "img": "6.jpg",
+        "vendor_code": "006"
+    },
+    {
+        "title": "Лилу",
+        "price": 8700,
+        "description": "Букет из лилий",
+        "img": "7.jpg",
+        "vendor_code": "007"
+    },
+    {
+        "title": "Полевое чудо",
+        "price": 3750,
+        "description": "Букет из ромашек",
+        "img": "8.jpg",
+        "vendor_code": "008"
+    },
+    {
+        "title": "Миссис",
+        "price": 2660,
+        "description": "Букет из ирисов",
+        "img": "9.jpg",
+        "vendor_code": "009"
+    }
+]

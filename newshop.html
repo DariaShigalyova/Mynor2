@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Магазин</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" rel="stylesheet">
+    <link rel="stylesheet" href="stylepass.css">
+</head>
+
+
+ <header>
+        <div class="card navigation">
+            <div class="card-body">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link" href="newmove.html">О нас</a>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="newshop.html">Магазин</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="table.html">Доставка</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="newoffer.html">Заказ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+
+<body>
+    <h2>Магазин</h2>
+   
+    <div class="card-body">
+        <div class="sort-options d-flex justify-content-center mb-3">
+            <input type="radio" id="price" name="sort" onchange="sort()"> 
+            <label for="price" class="pr">Сортировка по цене</label>
+            <input type="radio" id="title" name="sort" checked onchange="sort()">
+            <label for="title" class="nam">Сортировка по названию</label>
+        </div>
+
+        <ul class="product-list d-flex flex-row justify-content-around flex-wrap" id="products-list">
+        <form action="https://www.bing.com/search" id="UserEnter" name="UserEnter" target="_blank">
+                <input name="q" type="hidden" value="search">
+                
+                <ul class="d-flex flex-row justify-content-around flex-wrap bg-light" id="node_for_insert">
+                    <li class="card product-card">
+                        <img src="1.jpg" class="card-img-top" alt="Гортензии">
+                        <div class="card-body">
+                            <h5 class="card-title">Яркое чудо</h5>
+                            <p class="card-text">Букет из гортензий, пионов и асклепий. <br> Цена: 15550 р.</p>
+                            <input type="number" class="form-control mb-2" name="flower_1" min="0" placeholder="0">
+                        </div>
+                    </li>
+                    <li class="card product-card">
+                        <img src="2.jpg" class="card-img-top" alt="Розы">
+                        <div class="card-body">
+                            <h5 class="card-title">Момент мечты</h5>
+                            <p class="card-text">Букет из роз. Цена: 6890 р.</p>
+                            <input type="number" class="form-control mb-2" name="flower_2" min="0" placeholder="0">
+                        </div>
+                    </li>
+                    <li class="card product-card">
+                        <img src="3.jpg" class="card-img-top" alt="Альстромерии">
+                        <div class="card-body">
+                            <h5 class="card-title">Влюблённость</h5>
+                            <p class="card-text">Букет из альстромерий. Цена: 3200 р.</p>
+                            <input type="number" class="form-control mb-2" name="flower_3" min="0" placeholder="0">
+                        </div>
+                    </li>
+                    <li class="card product-card">
+                        <img src="4.jpg" class="card-img-top" alt="Хризантемы">
+                        <div class="card-body">
+                            <h5 class="card-title">Нежное послание</h5>
+                            <p class="card-text">Букет из хризантем. Цена: 4200 р.</p>
+                            <input type="number" class="form-control mb-2" name="flower_4" min="0" placeholder="0">
+                        </div>
+                    </li>
+                    <li class="card product-card">
+                        <img src="5.jpeg" class="card-img-top" alt="Пионы">
+                        <div class="card-body">
+                            <h5 class="card-title">Маленькая радости</h5>
+                            <p class="card-text">Букет из пионов. Цена: 3800 р.</p>
+                            <input type="number" class="form-control mb-2" name="flower_5" min="0" placeholder="0">
+                        </div>
+                    </li>
+                    <li class="card product-card">
+                        <img src="6.jpg" class="card-img-top" alt="Гипсофилы">
+                        <div class="card-body">
+                            <h5 class="card-title">Светлое вдохновение</h5>
+                            <p class="card-text">Букет из гипсофил. <br> Цена: 2300 р.</p>
+                            <input type="number" class="form-control mb-2" name="flower_6" min="0" placeholder="0">
+                        </div>
+                    </li>
+                    <li class="card product-card">
+                        <img src="7.jpg" class="card-img-top" alt="Лилии">
+                        <div class="card-body">
+                            <h5 class="card-title">Лилу</h5>
+                            <p class="card-text">Букет из лилий. Цена: 8700 р.</p>
+                            <input type="number" class="form-control mb-2" name="flower_7" min="0" placeholder="0">
+                        </div>
+                    </li>
+                    <li class="card product-card">
+                        <img src="8.jpg" class="card-img-top" alt="Ромашки">
+                        <div class="card-body">
+                            <h5 class="card-title">Полевое чудо</h5>
+                            <p class="card-text">Букет из ромашек. Цена: 3750 р.</p>
+                            <input type="number" class="form-control mb-2" name="flower_8" min="0" placeholder="0">
+                        </div>
+                    </li>
+                    <li class="card product-card">
+                        <img src="9.jpg" class="card-img-top" alt="Ирисы">
+                        <div class="card-body">
+                            <h5 class="card-title">Миссис</h5>
+                            <p class="card-text">Букет из ирисов. <br> Цена: 2660 р.</p>
+                            <input type="number" class="form-control mb-2" name="flower_9" min="0" placeholder="0">
+                        </div>
+                    </li>
+                </ul>
+                <input class="btn btn-primary" type="submit" value="В корзину">
+            </form>
+        </ul>
+    </div>
+
+
+    
+    <footer>
+    <p>&copy; 2024 Shigalyova</p>
+</footer>
+
+
+<script src="newshop.js"></script>
+</body>
+</html>
