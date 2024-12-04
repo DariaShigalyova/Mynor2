@@ -1,5 +1,4 @@
 function sort() {
-    // Получаем выбранную радиокнопку
     let price = document.getElementById("price");
     let title = document.getElementById("title");
 
@@ -13,14 +12,7 @@ function sort() {
         getResponceByTitle()}
     } 
 
- //   document.getElementById("node_for_insert").innerHTML = '';
 
-    // Вызываем соответствующую функцию для загрузки и сортировки данных
- //    if (price.checked) {
- //       await getResponceByPrice();
-  //  } else if (title.checked) {
-   //     await getResponceByTitle();  }
- //  
 
 async function getResponceByPrice() {
     // Загружаем JSON-данные
@@ -29,26 +21,22 @@ async function getResponceByPrice() {
 
     content = JSON.parse(content)
     content = content.splice(0, 9)
-    //content.sort()
+ 
     console.log(content)
     let key
-    /*for (key in content) {
-        console.log(content[key].id, content[key].title)
-        console.log(content[key])
-    }*/
+    
     content_price=content.sort((a, b) => a.price - b.price);
 
-    // Выводим отсортированные данные
     renderProducts(sortedByPrice);
 }
 
 
 async function getResponceByTitle() {
-    // Загружаем JSON-данные
+    
     let response = await fetch("shop.json");
     let content = await response.json();
 
-    // Сортируем по названию
+    
     let sortedByTitle = content.sort((a, b) => {
         const nameA = a.title.toUpperCase();
         const nameB = b.title.toUpperCase();
@@ -63,15 +51,15 @@ async function getResponceByTitle() {
           return 0;
         });
     
-    // Выводим отсортированные данные
+   
     renderProducts(sortedByTitle);
 }
 
 function renderProducts(products) {
-    // Контейнер для вставки
+   
     let nodeForInsert = document.getElementById("node_for_insert");
 
-    // Создаем элементы списка
+
     products.forEach(product => {
         nodeForInsert.innerHTML += `
             <li style="width: 310px" class="d-flex flex-column m-1 p-1 border bg-body">
