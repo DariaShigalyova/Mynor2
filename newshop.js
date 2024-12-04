@@ -1,46 +1,79 @@
-async function fetchData() {
-    try {
-        const response = await fetch('shop.json');
-        if (!response.ok) throw new Error('Ошибка загрузки JSON');
-        return await response.json();
-    } catch (error) {
-        console.error(error);
-        return [];
-    }
+function sort() {
+
+    let price = document.getElementById("price");
+    let title = document.getElementById("title");
+
+   
+    if(price.checked){
+        document.getElementById('node_for_insert').innerHTML = '';
+        getResponceByPrice()}
+
+    if(title.checked){
+        document.getElementById('node_for_insert').innerHTML = '';
+        getResponceByTitle()}
+    } 
+
+
+
+async function getResponceByPrice() {
+   
+    let response = await fetch("shop.json");
+    let content = await response.text();
+
+    content = JSON.parse(content)
+    content = content.slice(0, 9)
+    
+    console.log(content)
+    let key
+   
+    content_price=content.sort((a, b) => a.price - b.price);
+
+   
+    renderFlowers(sortedByPrice);
 }
 
-function renderProducts(products) {
-    const node = document.getElementById('node_for_insert');
-    node.innerHTML = ''; // Очистка контейнера
-    products.forEach(product => {
-        node.innerHTML += `
-            <li class="card product-card">
-                <img src="${product.img}" class="card-img-top" alt="${product.title}">
-                <div class="card-body">
-                    <h5 class="card-title">${product.title}</h5>
-                    <p class="card-text">${product.description}<br>Цена: ${product.price} р.</p>
-                    <input type="number" class="form-control mb-2" name="${product.vendor_code}" min="0" placeholder="0">
-                </div>
-            </li>
-        `;
+
+async function getResponceByTitle() {
+
+    let response = await fetch("shop.json");
+    let content = await response.json();
+
+    let sortedByTitle = content.sort((a, b) => {
+        const nameA = a.title.toUpperCase();
+        const nameB = b.title.toUpperCase();
+        if (nameA < nameB) {
+            return -1;
+          }
+          if (nameA > nameB) {
+            return 1;
+          }
+    
+          return 0;
+        });
+ 
+    renderFlowers(sortedByTitle);
+}
+
+function renderFlowers(flowers) {
+   
+    let nodeForInsert = document.getElementById("node_for_insert");
+
+ 
+    flowers.forEach(flowers => {
+        nodeForInsert.innerHTML += `
+            <li style="width: 310px" class="d-flex flex-column m-1 p-1 border bg-body">
+                <img style="width: 180px" class="align-self-center" src="${flower.img}" alt="${flower.title}">
+                <h5 class="card-title">${flower.title}</h5>
+                <p class="card-text">${flower.description}. Цена: ${flower.price} р.</p>
+                <input type="hidden" name="vendor_code" value="${flower.vendor_code}">
+                <p class="card-text">
+                    Заказать 
+                    <input class="w-25" type="checkbox" name="check" value="0" 
+                           onClick="this.value = this.checked ? 1 : 0">
+                </p>
+            </li>`;
     });
 }
 
-async function sort() {
-    const products = await fetchData(); // Получаем данные из JSON
-    const sortByPrice = document.getElementById('price').checked;
 
-    if (sortByPrice) {
-        products.sort((a, b) => a.price - b.price); // Сортировка по цене
-    } else {
-        products.sort((a, b) => a.title.localeCompare(b.title, 'ru')); // Сортировка по алфавиту
-    }
-
-    renderProducts(products); // Отображение отсортированных данных
-}
-
-// Инициализация
-document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('title').checked = true; // Устанавливаем сортировку по умолчанию
-    sort();
-});
+sort()
